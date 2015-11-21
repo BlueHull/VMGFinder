@@ -22,6 +22,8 @@
 		D001C7AD18022D37000916E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D001C78C18022D37000916E6 /* UIKit.framework */; };
 		D001C7B518022D37000916E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D001C7B318022D37000916E6 /* InfoPlist.strings */; };
 		D001C7B718022D37000916E6 /* VMG_FinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D001C7B618022D37000916E6 /* VMG_FinderTests.m */; };
+		D001C7C118022DD1000916E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D001C7C018022DD1000916E6 /* MapKit.framework */; };
+		D059A2A9188341BD001B1D5C /* VMGFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D059A2A8188341BD001B1D5C /* VMGFinderModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		D001C7B218022D37000916E6 /* VMG FinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VMG FinderTests-Info.plist"; sourceTree = "<group>"; };
 		D001C7B418022D37000916E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D001C7B618022D37000916E6 /* VMG_FinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMG_FinderTests.m; sourceTree = "<group>"; };
+		D001C7C018022DD1000916E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D059A2A7188341BD001B1D5C /* VMGFinderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMGFinderModel.h; sourceTree = "<group>"; };
+		D059A2A8188341BD001B1D5C /* VMGFinderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMGFinderModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 			files = (
 				D001C78B18022D37000916E6 /* CoreGraphics.framework in Frameworks */,
 				D001C78D18022D37000916E6 /* UIKit.framework in Frameworks */,
+				D001C7C118022DD1000916E6 /* MapKit.framework in Frameworks */,
 				D001C78918022D37000916E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +109,7 @@
 		D001C78718022D37000916E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D001C7C018022DD1000916E6 /* MapKit.framework */,
 				D001C78818022D37000916E6 /* Foundation.framework */,
 				D001C78A18022D37000916E6 /* CoreGraphics.framework */,
 				D001C78C18022D37000916E6 /* UIKit.framework */,
@@ -122,6 +129,8 @@
 				D001C7A118022D37000916E6 /* ViewController.m */,
 				D001C7A318022D37000916E6 /* Images.xcassets */,
 				D001C78F18022D37000916E6 /* Supporting Files */,
+				D059A2A7188341BD001B1D5C /* VMGFinderModel.h */,
+				D059A2A8188341BD001B1D5C /* VMGFinderModel.m */,
 			);
 			path = "VMG Finder";
 			sourceTree = "<group>";
@@ -202,6 +211,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Peter Constable";
 				TargetAttributes = {
+					D001C78418022D36000916E6 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D001C7A818022D37000916E6 = {
 						TestTargetID = D001C78418022D36000916E6;
 					};
@@ -255,6 +271,7 @@
 			files = (
 				D001C7A218022D37000916E6 /* ViewController.m in Sources */,
 				D001C79918022D37000916E6 /* AppDelegate.m in Sources */,
+				D059A2A9188341BD001B1D5C /* VMGFinderModel.m in Sources */,
 				D001C79518022D37000916E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +412,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VMG Finder/VMG Finder-Prefix.pch";
 				INFOPLIST_FILE = "VMG Finder/VMG Finder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,7 +427,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VMG Finder/VMG Finder-Prefix.pch";
 				INFOPLIST_FILE = "VMG Finder/VMG Finder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -474,6 +495,7 @@
 				D001C7BC18022D37000916E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D001C7BD18022D37000916E6 /* Build configuration list for PBXNativeTarget "VMG FinderTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +504,7 @@
 				D001C7BF18022D37000916E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
